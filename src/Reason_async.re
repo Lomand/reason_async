@@ -19,7 +19,7 @@ module type MonadThing = {
   let return: 'a => t('a);
   let map: (t('a), ~f: 'a => 'b) => t('b);
   let bind: (t('a), ~f: 'a => t('b)) => t('b);
-  let consume: (t('a), ~f: 'a => unit) => unit;
+  let consume: (t('a), ~f: 'a => string) => string;
   let join2: (t('a), t('b)) => t(('a, 'b));
   /*let mapl: list (t 'a) => f::('a => 'b) => t (list 'b);*/
   /*let bindl: list (t 'a) => f::('a => t 'b) => t (list 'b);*/
