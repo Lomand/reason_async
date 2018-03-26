@@ -217,7 +217,7 @@ module Result = {
       | Ok(x) => use(x)
       | Error(e) => Error(e)
       };
-  let consume: (t('a, 'b), ~f: 'a => unit) => string =
+  let consume: (t('a, 'b), ~f: 'a => string) => string =
     (value, ~f as use) =>
       switch (value) {
       | Ok(x) => use(x)
